@@ -1,3 +1,25 @@
+# User registration form
+
+This project consists of a user regitration form. It is used to take the email and password of the users and then authenticate them.
+The new user can Signup and the old users can login.The user is notified when the credentials entered are wrong or already in use,
+and then on authentication they are redirected to the Home page.
+
+## Technologies used
+
+- ReactJS.
+- CSS 3.
+- Context API.
+- Firebase (email and password authentcation).
+- React-toastify (for short and crisp alerts).
+- React-router-dom (v6).
+
+## Features
+
+- Email and Password authentication.
+- Responsive design for almost all devices.
+- Crisp and professional UI just like the one used in real applications.
+- Responsive alerts for notifying the users if any error is there in the email and password entered.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
