@@ -8,6 +8,11 @@ import "./Page.css";
 import { toast } from "react-toastify";
 import { Navigate, useNavigate } from "react-router-dom";
 import { Context } from "../stateprovider/context";
+import {
+  FormAnimation,
+  InputAnimation,
+  OtherAnimation,
+} from "./PageAnimations";
 
 const Page = () => {
   const { state, dispatch } = useContext(Context);
@@ -87,42 +92,48 @@ const Page = () => {
     return <Navigate to="/" />;
   }
   return (
-    <form className="form">
-      <div className="form-inner">
-        <p className="heading">Create an XYZ account </p>
-        <p className="desc">
-          One account for everything, all services included.{" "}
-          <span className="learn">Learn more</span>
-        </p>
-        <p>Email</p>
-        <input
-          name="email"
-          type="text"
-          placeholder="Email"
-          value={credentials.email}
-          onChange={changeHandler}
-          className="form-input"
-        />
-        <p>Password</p>
-        <input
-          name="password"
-          type="password"
-          placeholder="Password (min.length 6 characters)"
-          value={credentials.password}
-          onChange={changeHandler}
-          className="form-input"
-        />
-        <br />
-        <button onClick={signUpClickHandler} className="form-signup">
-          Create Account
-        </button>
-        <br />
-        Already a user?
-        <span onClick={signInClickHandler} className="form-signin">
-          Login
-        </span>
-      </div>
-    </form>
+    <FormAnimation>
+      <form className="form">
+        <div className="form-inner">
+          <p className="heading">Create an XYZ account </p>
+          <p className="desc">
+            One account for everything, all services included.{" "}
+            <span className="learn">Learn more</span>
+          </p>
+          <p>Email</p>
+          <InputAnimation>
+            <input
+              name="email"
+              type="text"
+              placeholder="Email"
+              value={credentials.email}
+              onChange={changeHandler}
+              className="form-input"
+            />
+            <p>Password</p>
+            <input
+              name="password"
+              type="password"
+              placeholder="Password (min.length 6 characters)"
+              value={credentials.password}
+              onChange={changeHandler}
+              className="form-input"
+            />
+          </InputAnimation>
+          <br />
+          <OtherAnimation>
+            <button onClick={signUpClickHandler} className="form-signup">
+              Create Account
+            </button>
+            <br />
+            Already a user?
+            <span onClick={signInClickHandler} className="form-signin">
+              Login
+            </span>
+          </OtherAnimation>
+        </div>
+      </form>
+    </FormAnimation>
   );
 };
 
