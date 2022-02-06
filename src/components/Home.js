@@ -6,6 +6,7 @@ const Home = () => {
   const { state } = useContext(Context);
   const { user } = state; //Destructuring the state further to get the user
 
+  //Condition to check whether the user.uid is present or not, and if not present then redirect to the signup page
   if (!user?.uid) {
     return <Navigate to="/signup" />;
   }
