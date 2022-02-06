@@ -1,18 +1,31 @@
 import React, { useContext, useState } from "react";
+
+//Importing the things we need from firebase
 import {
   getAuth,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
+
 import "./Page.css";
+
+//For the elegant and crisp toast notifications
 import { toast } from "react-toastify";
-import { Navigate, useNavigate } from "react-router-dom";
+
+import { Navigate } from "react-router-dom";
 import { Context } from "../stateprovider/context";
+
+//Below are the animations for the different elements that we will need
 import {
+  DescriptionAnimation,
   FormAnimation,
+  HeadingAnimation,
   InputAnimation,
   OtherAnimation,
 } from "./PageAnimations";
+
+/************************************************************************************************* */
+//Actual logic of the code begins
 
 const Page = () => {
   const { state, dispatch } = useContext(Context);
@@ -95,17 +108,22 @@ const Page = () => {
     <FormAnimation>
       <form className="form">
         <div className="form-inner">
-          <p className="heading">Create an XYZ account </p>
-          <p className="desc">
-            One account for everything, all services included.{" "}
-            <span className="learn">Learn more</span>
-          </p>
-          <p>Email</p>
+          <HeadingAnimation>
+            {" "}
+            <p className="heading">Create an XYZ account </p>
+          </HeadingAnimation>
+          <DescriptionAnimation>
+            <p className="desc">
+              One account for everything, all services included.{" "}
+              <span className="learn">Learn more</span>
+            </p>
+          </DescriptionAnimation>
           <InputAnimation>
+            <p>Email</p>
             <input
               name="email"
               type="text"
-              placeholder="Email"
+              placeholder="eg:email@gmail.com"
               value={credentials.email}
               onChange={changeHandler}
               className="form-input"
