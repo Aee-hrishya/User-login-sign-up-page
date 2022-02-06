@@ -6,7 +6,7 @@ import Home from "./components/Home";
 import { firebaseConfig } from "./firebaseConfig";
 import { initializeApp } from "firebase/app";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 //ToastContainer which will be needed for the toast messages
 import { ToastContainer } from "react-toastify";
