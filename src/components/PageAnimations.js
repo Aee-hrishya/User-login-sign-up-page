@@ -7,6 +7,7 @@ export const FormAnimation = ({ children }) => {
     loop: false,
     from: { x: -500 },
     to: { x: 1 },
+    delay: 200,
     config: { friction: 15, transition: 100 },
   });
 
@@ -14,25 +15,59 @@ export const FormAnimation = ({ children }) => {
   return <animated.div style={styles}>{children}</animated.div>;
 };
 
-export const InputAnimation = ({ children }) => {
+//Animaton for the main heading
+export const HeadingAnimation = ({ children }) => {
   const styles = useSpring({
     loop: false,
-    from: { y: -500 },
-    to: { y: 1 },
-    config: { friction: 15, transition: 100 },
+    from: { x: 5000 },
+    to: { x: 1 },
+    delay: 500,
+    config: {
+      friction: 40,
+      transition: 100,
+    },
+  });
+  return <animated.div style={styles}>{children}</animated.div>;
+};
+
+export const DescriptionAnimation = ({ children }) => {
+  const styles = useSpring({
+    loop: false,
+    from: { x: -5000 },
+    to: { x: 1 },
+    delay: 600,
+    config: {
+      friction: 40,
+      transition: 100,
+    },
   });
 
   return <animated.div style={styles}>{children}</animated.div>;
 };
 
+//The animation for all the inputs
+export const InputAnimation = ({ children }) => {
+  const styles = useSpring({
+    loop: false,
+    from: { y: -500 },
+    to: { y: 1 },
+    delay: 700,
+    config: { transition: 20, friction: 15 },
+  });
+
+  return <animated.div style={styles}>{children}</animated.div>;
+};
+
+//The animation for the buttons
 export const OtherAnimation = ({ children }) => {
   const styles = useSpring({
     loop: false,
     from: { y: 1000 },
     to: { y: 1 },
+    delay: 1500,
     config: {
       friction: 15,
-      transition: 100,
+      bounce: 2,
     },
   });
   return <animated.div style={styles}>{children}</animated.div>;
