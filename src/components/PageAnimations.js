@@ -49,7 +49,7 @@ export const DescriptionAnimation = ({ children }) => {
 export const InputAnimation = ({ children }) => {
   const styles = useSpring({
     loop: false,
-    from: { y: -500 },
+    from: { y: -5000 },
     to: { y: 1 },
     delay: 700,
     config: { transition: 20, friction: 15 },
