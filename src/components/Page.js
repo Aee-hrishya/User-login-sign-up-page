@@ -122,8 +122,8 @@ const Page = () => {
             <p>Email</p>
             <input
               name="email"
-              type="text"
-              placeholder="eg:email@gmail.com"
+              type="email"
+              placeholder="Eg:email@gmail.com"
               value={credentials.email}
               onChange={changeHandler}
               className="form-input"
